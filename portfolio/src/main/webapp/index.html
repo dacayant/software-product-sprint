@@ -114,9 +114,19 @@
             🠔  Connect With Me
         </h1>
         <!-- Servlet and Fetch() Testing -->
-        <div class="center">
-            <button onclick="displayHello()"> Click Here if you are the Website owner</button>
-            <h1 id="greeting-container"> </h1>
+        <div class="flex-container center">
+            <div style="flex: 1">
+                <button onclick="displayHello()"> Click Here if you are the Website owner</button>
+                <h1 id="owner-greeting-container"> </h1>
+            </div> 
+            <div style="flex: 1">
+                <button onclick="displayFavorites()"> Click Here if you would like to see the Owner's favorite things</button>
+                <ul id="favorites-container"> </ul>
+            </div>
+            <div style="flex: 1">
+                <button onclick="addRandomGreeting()"> Click Here for a random greeting</button>
+                <p id="greetings-container"> <p>
+            </div>
         </div>
         
 
