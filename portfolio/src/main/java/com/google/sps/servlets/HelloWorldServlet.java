@@ -16,8 +16,8 @@ public class HelloWorldServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-  public void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
-    response.setContentType("text/html;");
-    response.getWriter().println("<h1>Hello Tristram Dacayan!</h1>");
-  }
+    public void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+        response.setContentType("text/html;");
+        response.getWriter().println("<h1>Hello Tristram Dacayan!</h1>");
+    }
 }
