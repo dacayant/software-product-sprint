@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
 @WebServlet("/more-about")
-public class JSONTest extends HttpServlet {
+public class JSONServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
