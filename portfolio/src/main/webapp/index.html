@@ -5,7 +5,9 @@
     <title>Tristram's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fonts.css"> <!--Added a fonts sheet just to keep it organized-->
-    <script src="fetchTest.js"></script>
+    
+    <script src="script.js"></script>
+    <script src="contact-holder.js"></script>
   </head>
   
   <body style="background-color:rgb(40, 114, 143)">
@@ -127,14 +129,37 @@
                 <p id="greetings-container"> <p>
             </div>
         </div>
+        
         <!-- Post() Function Testing -->
-        <div class="center">
-            <form action = "/form-handler" method="POST">
-                <p>Enter some text here:</p>
-                <textarea name="text-input">hello world</textarea>
-                <br/>
-                <input type="submit" />
-            </form>
+        <div>
+            <div class="left">
+                <form action="/contact" class="multi-form left">
+                    <p>Want to connect? List your name and contact info here:</p>
+                    <div class="flex-container">
+                        <label for="Name">Name: </label>
+                    <input type="text" id="name" placeholder="Enter Name" name="name">
+                    </div>
+                    <div class="flex-container">
+                         <label for="email">Email: </label>
+                    <input type="email" id="email" placeholder="Enter Email" name="email">
+                    </div>
+                    <div class="flex-container">
+                        <label for="number">Number: </label>
+                    <input type="text" id="number" placeholder="Enter Number" name="number">
+                    </div>
+
+                    <div style="flex-flow:row">
+                        <input type="checkbox" id="phone-opt">
+                        <p>Leave Phone Number</p> 
+                        <br>                        
+                        <input type="checkbox" id="email-opt">
+                        <p>Leave Email</p>
+                    </div>
+                    
+
+                    <input type="submit"/>
+                </form>
+            </div>
         </div>
 
     </div>
