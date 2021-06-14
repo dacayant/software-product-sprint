@@ -2,7 +2,6 @@
 async function displayHello() {
     const response = await fetch('/hello');
     const text = await response.text()
-
     const testContainer = document.getElementById('owner-greeting-container');
     testContainer.innerHTML = text;
 }
@@ -26,7 +25,7 @@ async function displayFavorites(){
         createListElement("Band: " + favorites.Band));
 }
 
-// CReates an <li> element containing text
+// Creates an <li> element containing text
 function createListElement(text) {
     const liElement = document.createElement('li');
     liElement.innerText = text;
