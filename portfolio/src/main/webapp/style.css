@@ -79,11 +79,6 @@ form.multi-form label {
     color: white;
 }
 
-.disabled {
-   color: darkgrey;
-   background-color: grey;
-}
-
 /* Background Colors */
 .bg1{
     background-color:rgb(40, 114, 143);
@@ -157,7 +152,7 @@ div.content {
 }
 
 /* Hide forms until clicked */
-#email label, #phone label {
+label[for="email"], [for="number"], #email, #number {
     display: none;
 }
 
