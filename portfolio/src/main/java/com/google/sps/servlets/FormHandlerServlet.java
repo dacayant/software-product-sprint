@@ -23,7 +23,7 @@ public class FormHandlerServlet extends HttpServlet {
         // Print the value so you can see it in the server logs.
         System.out.println("You submitted: " + textValue);
  
-        // Write the value to the response so the user can see it.
-        response.sendRedirect("#Home");
+        // Redirect back to homepage
+        response.sendRedirect(request.getContextPath());    // returns to homepage + "/SERVLET_NAME" 
     }
 }
