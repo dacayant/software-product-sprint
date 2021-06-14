@@ -30,8 +30,9 @@ public class ContactServlet extends HttpServlet {
         // Prints only in the Console
         System.out.println(newContact.toString());
         
+        
         // Redirect back to homepage
-        response.sendRedirect(request.getContextPath() );
+        response.sendRedirect(request.getContextPath());
     }
 
     // Borrowed from the TextProcessorServlet example
