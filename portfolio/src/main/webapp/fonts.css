@@ -9,6 +9,15 @@ h1 {
     margin: 5px; 
     padding: 20px;
 } 
+h2 { 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    font-size: 21px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 700; 
+    line-height: 15.4px; 
+    margin: 5px; 
+} 
 h3 { 
     font-family: Merriweather; 
     font-size: 14px; 

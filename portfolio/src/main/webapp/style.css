@@ -4,6 +4,7 @@ making for a more streamlined design.*/
 body {margin: 0px;}
 tab1 {padding-left: 1em;}
 tab2 {padding-left: 2em;}
+input {display: inline-block;}
 
 /* Used to define a certain space within the webapp */
 div {
@@ -12,9 +13,21 @@ div {
     padding: 3px;
 }
 
+div.content {
+    width: 75%;
+    align-items: center;
+}
+
 a {
     color: inherit;
     text-decoration: inherit;
+}
+
+label{
+    display: inline-block;
+    clear: left;
+    width: 15%;
+    text-align: left;
 }
 
 /* Container Types */
@@ -47,7 +60,8 @@ a {
     position: relative;
 }
 
-.text-block{            /* Used for writing text within the webapp */
+/* Used for writing text within the webapp */
+.text-block{            
     display: block;
     max-height: inherit;
     margin: 10px;
@@ -55,6 +69,16 @@ a {
     border: 1px black;
     border-radius: 10px; /* Curves border corners*/
     color: white;
+}
+
+/* Have multiple input fields in one div */
+form.multi-form{
+    display: flex;
+    flex-flow:column;
+}
+
+form.multi-form label {
+    margin: 5px 10px 5px 10px
 }
 
 .button {
@@ -67,18 +91,13 @@ a {
     color: white;
 }
 
+.contact-form {
+    padding: 20% 0px;
+}
+
 /* Background Colors */
-.bg1{
-    background-color:rgb(40, 114, 143);
-}
-.bg2{
-    background-color:#216978;
-}
 .bg3{
     background-color:white;
-}
-.bg4 {
-    background-color: rgb(26, 26, 26);
 }
 
 /* Positioning Elements */
@@ -86,10 +105,13 @@ a {
     margin-left: auto;
     margin-right: auto;
     vertical-align: middle;
+    float: center;
 }
 
-p.center{
-    bottom: 10%;
+.left {
+    vertical-align: left;
+    float: left;
+    text-align: left;
 }
 
 h1.right {
@@ -105,37 +127,29 @@ h1.left {
     color: rgb(40, 114, 143)
 }
 
-div.content {
-    width: 75%;
-    align-items: center;
-}
-
 /*Code below directly make changes to elements with the corresponding ids*/
-#header {
-    width: 100%;
+header.header {
     height: 30px;
-    position:fixed;
+    /* position:fixed; */
+    background-color: rgb(26, 26, 26);
     border-bottom: 5px solid rgb(40, 114, 143);
-    padding-left: 10%;
-    z-index: 1000;
-    align-items: left;
-    
+    /* padding-left: 10%;
+    z-index: 4;
+    align-items: left; */
 }
 
-#footer {
-    width: 100%;
-    height: 60px;
+footer.footer {
+    height: 70px;
     z-index: 0;
-    padding-left: 5%;
+    padding-left: 2%;
     align-items: left;
+    background-color: rgb(26, 26, 26);
     border-top: 10px solid rgb(40, 114, 143);
-    
-    font-size: 21px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: auto
 }
 
-/* Intro Elements */
+
+/* Image Elements */
 img.links {
     display: block;
     float: left;
@@ -144,6 +158,7 @@ img.links {
     margin: 10px;
     filter: invert(100%)
 }
+
 img.links:hover{
     filter: invert(50%)
 }

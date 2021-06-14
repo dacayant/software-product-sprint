@@ -5,22 +5,23 @@
     <title>Tristram's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fonts.css"> <!--Added a fonts sheet just to keep it organized-->
-    <script src="fetchTest.js"></script>
+    
+    <script src="buttons.js"></script>
   </head>
   
   <body style="background-color:rgb(40, 114, 143)">
     
     <!-- Header for the Website -->
-    <div id="header" class="bg4">
-        <div class="flex-container" style="float:left">
+    <header class="header">
+        <div class="flex-container center">
             <div class="button"> <a href="#Home">Home</a></div>
             <div class="button"> <a href="#About">About</a></div>
             <div class="button"> <a href="#Gallery">Gallery</a></div>
         </div>
-    </div>  
+    <header>  
     
     <!-- Intro/About Page-->
-    <div class="container" id="Home" style="padding: 0px;">                                     <!-- BKG Image Container-->
+    <div class="container" id="Home">                                     <!-- BKG Image Container-->
         
         <img src="images/bay_rocks.jpg" id="bg-img">
         
@@ -37,30 +38,18 @@
             </div>
             
             <div class="container center" style="flex:2">       <!--Right Element for person pic.-->
-                <div class="container-child bg3" style="opacity:0.4"></div>
-                <img src="images/graduation_photo.png" id="profile-pic">
-
-                <div class="text-block">
-                    <h2 style="text-align: center"> 
-                        <br>Read more 
-                        <a href="#About">
-                            <span style="color:orange">
-                                about me →
-                            </span>
-                        </a>
-                    </h3>
+                <div class="container-child bg3" style="opacity:0.4">
                 </div>
-
+                <img src="images/graduation_photo.png" id="profile-pic">
             </div>
         </div>
     </div>
     
     <!-- About Me Page -->
-    
-    <div class="container bg3" id="About" style="padding: 0px;"> 
+    <div class="container bg3" id="About" style="padding: 30px 0px 30px;"> 
         <div class="flex-container content center">
             <div class="container" style="flex:2">
-                <img src="images/courthouse.JPG" class="gallery-photo">
+                <img src="images/windows_stock.JPG" style="max-width:100%; border-radius: 2px;">
             </div>
             <div class="container" style="flex:3">
                 <div class="text-block">
@@ -78,11 +67,10 @@
                 </div>
             </div>
         </div>
-        <hr>
     </div>
-    
+
     <!-- Gallery -->
-    <div class="container bg3" id="Gallery" style="padding: 0px;">
+    <div class="container bg3" id="Gallery">
         <h1 class="left">Gallery</h1>
         <table class="center" id="gallery">
             <tr>
@@ -91,7 +79,7 @@
                 <th><img src="images/night_ferriswheel.jpg" class="gallery-photo"></th>
             </tr>
             <tr>
-                <th><img src="images/courthouse.JPG" class="gallery-photo"></th>
+                <th><img src="images/courthouse.jpg" class="gallery-photo"></th>
                 <th><img src="images/train_blur.jpg" class="gallery-photo"></th>
                 <th><img src="images/porch_cat.jpg" class="gallery-photo"></th>
             </tr>
@@ -103,23 +91,61 @@
         </table>
     </div>
 
+    <!-- Post() Function Testing -->
+    <div class="container center bg3">
+        <!-- Servlet and Fetch() Testing -->
+        <div class="flex-container center">
+            <div style="flex: 1">
+                <button onclick="displayHello()"> Click Here if you are the Website owner</button>
+                <h1 id="owner-greeting-container"> </h1>
+            </div> 
+            <div style="flex: 1">
+                <button onclick="displayFavorites()"> Click Here if you would like to see the Owner's favorite things</button>
+                <ul id="favorites-container"> </ul>
+            </div>
+            <div style="flex: 1">
+                <button onclick="addRandomGreeting()"> Click Here for a random greeting</button>
+                <p id="greetings-container"> <p>
+            </div>
+        </div>
+            
+        <!-- <form action="/form-handler" method="POST">
+            <p>Enter some text here:</p>
+            <textarea name="text-input">hello world</textarea>
+            <br/>
+            <input type="submit" />
+        </form> -->
+
+        <div class="flex-container" style="margin:auto; align-items: center;">
+            <form method="POST" action="/contact-me" class="multi-form center">
+                <div>
+                    <p>Want to connect? List your name and contact info here:</p>
+                <div class="flex-container">
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" placeholder="Enter Name" name="name">
+                </div>
+                <div class="flex-container">
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" placeholder="Enter Email" name="email">
+                </div>
+                <div class="flex-container">
+                    <label for="number">Number: </label>
+                    <input type="text" id="number" placeholder="Enter Number" name="number">
+                </div>
+                <input type="submit""/>
+                </div>
+            </form>
+        </div>
+    </div>    
+
     <!-- Footer for the WebPage -->
-    <div id="footer" class="container center bg4">
-        <div class="container">
+    <footer class="footer">
+        <div class="flex-container">
             <a href="https://www.linkedin.com/in/tdacayan"><img src="images/icons/linkedin.png" class="links"></a>
             <a href="https://github.com/dacayant"><img src="images/icons/github.png" class="links"></a>
             <a href="mailto:dacayant@kean.edu"><img src="images/icons/email.png" class="links"></a>
+            <!-- <h2 style="margin-top:auto; margin-bottom: auto;"> 🠔  Connect With Me </h2>    -->
         </div>
-        <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin: auto; font-size: 21px;">
-            🠔  Connect With Me
-        </h1>
-        <!-- Servlet and Fetch() Testing -->
-        <div class="center">
-            <button onclick="displayHello()"> Click Here if you are the Website owner</button>
-            <h1 id="greeting-container"> </h1>
-        </div>
-        
-
-    </div>
+    </footer>
   </body>
 </html>

@@ -26,7 +26,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/server-stats")
 public final class ServerStatsServlet extends HttpServlet {
 
-  private final Date startTime = new Date();
+    private static final long serialVersionUID = 1L;
+    private final Date startTime = new Date();
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -38,10 +39,13 @@ public final class ServerStatsServlet extends HttpServlet {
     // Convert the server stats to JSON
     ServerStats serverStats = new ServerStats(startTime, currentTime, maxMemory, usedMemory);
     String json = convertToJson(serverStats);
+    String json2 = convertToJsonUsingGson(serverStats);
+
 
     // Send the JSON as the response
     response.setContentType("application/json;");
-    response.getWriter().println(json);
+    // response.getWriter().println(json);
+    response.getWriter().println(json2);
   }
 
   /**
@@ -69,8 +73,8 @@ public final class ServerStatsServlet extends HttpServlet {
    * the Gson library dependency to pom.xml.
    */
   private String convertToJsonUsingGson(ServerStats serverStats) {
-    Gson gson = new Gson();
-    String json = gson.toJson(serverStats);
-    return json;
+        Gson gson = new Gson();
+        String json = gson.toJson(serverStats);
+        return json;
   }
 }
