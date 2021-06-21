@@ -1,3 +1,26 @@
+// How to use:
+// Add the 'hide-' or 'show-' name to the trigger element, followed by the id of the target element
+
+$(document).ready(
+    // Detects when elements with 'show-' in their name and the 'trigger' class are clicked
+    function(){
+        $( "[name*='show-']" ).click(
+            function(){
+                // Takes the id number in the name of the trigger element
+                var trigger_id = $(this).attr("name").replace("show-", "");
+                // Shows the element with the corresponding id
+                $("#"+trigger_id).fadeIn();
+            }
+        );
+
+        $( "[name*='hide-']" ).click(
+            function(){
+                var trigger_id = $(this).attr("name").replace("hide-", "");
+                $("#"+trigger_id).hide();
+            }
+        );
+});
+
 /** Fetchs the content from the /hello servlet */
 async function displayHello() {
     const response = await fetch('/hello');
@@ -26,7 +49,7 @@ async function displayFavorites(){
         createListElement("Band: " + favorites.Band));
 }
 
-// CReates an <li> element containing text
+// Creates an <li> element containing text
 function createListElement(text) {
     const liElement = document.createElement('li');
     liElement.innerText = text;
