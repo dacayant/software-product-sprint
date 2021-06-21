@@ -131,10 +131,11 @@
             <!-- Contact Information -->
             <div class="flex-container bg3 center" style="margin:auto; align-items: center;">
                 
-                <form method="POST" action="/upload-image" class="multi-form center">
+                <form method="POST" action="/upload-image" enctype="multipart/form-data" class="multi-form center">
                     <!-- <span class="close" name="hide-Modal">&times;</span>  -->
                     <h1>Want to share your photo?</h1>
                     
+                    <!-- TODO: incorporate the contact info and combine the ContactHandler and ImageHandler -->
                     <!-- <div class="flex-container">
                         <label for="name">Name: </label>
                         <input type="text" id="name" placeholder="Enter Name" name="name" required>
@@ -149,14 +150,13 @@
                     <!-- Portion for Cloud Storage -->
                     <div>
                         <div class="flex-container">
-                            <input type="file" name="image" class="center">
+                            <input type="file" accept="image/*"name="image" class="center">
                         </div>
                         <div>
                             <img src="images/windows_stock.JPG" class="gallery-photo" style="max-width:300px; border-radius: 2px;">
                         </div>
                     </div>
                     <br> <input type="submit" class="center"/> <br>
-                    
                 </form>
             </div>
         </div>
@@ -171,6 +171,13 @@
 
             <div style="flex:1"> 
                 <span name="show-Modal" class="clickable" style="color: white; float: right; font-size: 24px;">Want to share your photos?</span> 
+            </div>
+
+            <!-- TODO: Create a modal that shows all user submitted photos using JavaScript -->
+            <div style="flex:1"> 
+                <a href="/list-images">
+                    <span class="clickable" style="color: white; float: right; font-size: 18px;">Click to see the photos others have uploaded!</span> 
+                </a> 
             </div>
 
         </div>
