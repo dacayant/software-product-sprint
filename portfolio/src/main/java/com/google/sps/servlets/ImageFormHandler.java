@@ -44,6 +44,8 @@ public class ImageFormHandler extends HttpServlet {
         out.println("<a href=\"" + uploadedFileUrl + "\">");
         out.println("<img src=\"" + uploadedFileUrl + "\" />");
         out.println("</a>");
+
+        response.sendRedirect(request.getContextPath()); 
     }
     /** Uploads a file to Cloud Storage and returns the uploaded file's URL. */
     private static String uploadToCloudStorage(String fileName, InputStream fileInputStream) {
