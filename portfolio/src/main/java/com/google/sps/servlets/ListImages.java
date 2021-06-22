@@ -29,9 +29,9 @@ public class ListImages extends HttpServlet {
     // Output <img> elements as HTML.
     response.setContentType("text/html;");
     for (Blob blob : blobs.iterateAll()) {
-      String imgTag = String.format("<img src=\"%s\" />", blob.getMediaLink());
+      String imgTag = String.format("<img src=\"%s\" style=\"width: 300px\">", blob.getMediaLink());
       response.getWriter().println(imgTag);
-      response.getWriter().println("<br>");
+      response.getWriter().println("<br><br>");
     }
   }
 }
