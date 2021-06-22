@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="fonts.css"> <!--Added a fonts sheet just to keep it organized-->
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="interactable-elements.js"></script>
+    <script src="interactive-elements.js"></script>
   </head>
   
   <body style="background-color:rgb(40, 114, 143)">
@@ -50,7 +50,7 @@
     <div class="container bg3" id="About" style="padding: 30px 0px 30px;"> 
         <div class="flex-container content center">
             <div class="container" style="flex:2">
-                <img src="images/windows_stock.JPG" style="max-width:100%; border-radius: 2px;">
+                <img src="images/windows_stock.JPG" style="max-width:100%; border-radius: 2px; box-shadow: rgb(104, 104, 104);">
             </div>
             <div class="container" style="flex:3">
                 <div class="text-block">
@@ -116,23 +116,20 @@
             <br/>
             <input type="submit" />
         </form> -->
-
-        
-        
-
-        <!-- Form to submit pictures -->
-
     </div>
 
+    <!-- Form to submit pictures -->
     <div id="Modal">
         <!-- Modal content -->
         <div class="modal-content">
-            
+             
             <!-- Contact Information -->
-            <div class="flex-container bg3 center" style="margin:auto; align-items: center;">
+            <div class="bg3 center" style="margin:auto; align-items: center">
+                <img src="images/icons/close-icon.png" class="close clickable" name="hide-Modal">
                 
+                <!-- <span class="clickable close" name="hide-Modal">&times;</span> -->
                 <form method="POST" action="/upload-image" enctype="multipart/form-data" class="multi-form center">
-                    <!-- <span class="close" name="hide-Modal">&times;</span>  -->
+                    
                     <h1>Want to share your photo?</h1>
                     
                     <!-- TODO: incorporate the contact info and combine the ContactHandler and ImageHandler -->
@@ -147,13 +144,14 @@
                         <input type="email" id="email" placeholder="Enter Email" name="email" required>
                     </div>
                     <br> -->
+
                     <!-- Portion for Cloud Storage -->
                     <div>
                         <div class="flex-container">
-                            <input type="file" accept="image/*"name="image" class="center">
+                            <input type="file" accept="image/*" name="image" class="center" onchange="preview_image(event)">
                         </div>
                         <div>
-                            <img src="images/windows_stock.JPG" class="gallery-photo" style="max-width:300px; border-radius: 2px;">
+                            <img src="images/image_placeholder.jpg" class="gallery-photo" id="img-preview" required>
                         </div>
                     </div>
                     <br> <input type="submit" class="center"/> <br>
@@ -165,9 +163,9 @@
     <!-- Footer for the WebPage -->
     <footer class="footer">
         <div class="flex-container">
-            <a href="https://www.linkedin.com/in/tdacayan"><img src="images/icons/linkedin.png" class="clickable"></a>
-            <a href="https://github.com/dacayant"><img src="images/icons/github.png" class="clickable"></a>
-            <a href="mailto:dacayant@kean.edu"><img src="images/icons/email.png" class="clickable"></a>
+            <a href="https://www.linkedin.com/in/tdacayan"><img src="images/icons/linkedin.png" class="clickable icon"></a>
+            <a href="https://github.com/dacayant"><img src="images/icons/github.png" class="clickable icon"></a>
+            <a href="mailto:dacayant@kean.edu"><img src="images/icons/email.png" class="clickable icon"></a>
 
             <div style="flex:1"> 
                 <span name="show-Modal" class="clickable" style="color: white; float: right; font-size: 24px;">Want to share your photos?</span> 
