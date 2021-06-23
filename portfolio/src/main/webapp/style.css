@@ -11,6 +11,7 @@ div {
     border-style: solid;
     border: 1px black;
     padding: 3px;
+    overflow-x: hidden;
 }
 
 div.content {
@@ -26,7 +27,7 @@ a {
 label{
     display: inline-block;
     clear: left;
-    width: 15%;
+    width: 8%;
     text-align: left;
 }
 
@@ -72,7 +73,7 @@ label{
 }
 
 /* Have multiple input fields in one div */
-form.multi-form{
+form.multi-form {
     display: flex;
     flex-flow:column;
 }
@@ -91,10 +92,6 @@ form.multi-form label {
     color: white;
 }
 
-.contact-form {
-    padding: 20% 0px;
-}
-
 /* Background Colors */
 .bg3{
     background-color:white;
@@ -105,13 +102,13 @@ form.multi-form label {
     margin-left: auto;
     margin-right: auto;
     vertical-align: middle;
+    text-align: center;
     float: center;
 }
 
-.left {
-    vertical-align: left;
-    float: left;
-    text-align: left;
+input.center {
+    display: block;
+    margin: 0 auto;
 }
 
 h1.right {
@@ -133,9 +130,6 @@ header.header {
     /* position:fixed; */
     background-color: rgb(26, 26, 26);
     border-bottom: 5px solid rgb(40, 114, 143);
-    /* padding-left: 10%;
-    z-index: 4;
-    align-items: left; */
 }
 
 footer.footer {
@@ -148,9 +142,8 @@ footer.footer {
     margin: auto
 }
 
-
 /* Image Elements */
-img.links {
+img.clickable.icon {
     display: block;
     float: left;
     height: 40px;
@@ -158,16 +151,21 @@ img.links {
     margin: 10px;
     filter: invert(100%)
 }
-
-img.links:hover{
+img.clickable.icon:hover {
     filter: invert(50%)
+}
+
+.clickable:hover{
+    filter: opacity(50%);
+    cursor: pointer;
 }
 
 img.gallery-photo {
     border: 1px solid black;
     max-height: 400px;
-    max-width: 300px;
+    max-width: 500px;
     border-radius: 10px;
+    box-shadow: 3px 3px 5px rgb(63, 63, 63);
 }
 
 #greeting {
@@ -206,4 +204,42 @@ img.gallery-photo {
     left: 50%;
     transform: translate(35%, 10%);
     width: 60%;
+}
+
+/* The Modal (background) */
+#Modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  padding-top: 10%; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid gray;
+  width: 30%;
+  background-color:rgb(52, 146, 184);
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px black;
+}
+
+.close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 15px;
+}
+
+#email {
+    width: 85%;
 }
