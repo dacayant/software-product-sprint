@@ -1,3 +1,4 @@
+
 // Show-hide elements
 $(document).ready(
     // How to use:
@@ -54,6 +55,12 @@ async function displayHello() {
     const response = await fetch('/hello');
     const text = await response.text()
 
+
+/** Fetchs the content from the /hello servlet */
+async function displayHello() {
+    const response = await fetch('/hello');
+    const text = await response.text()
+
     const testContainer = document.getElementById('owner-greeting-container');
     testContainer.innerHTML = text;
 }
@@ -94,4 +101,8 @@ function addRandomGreeting() {
     // Add it to the page.
     const greetingContainer = document.getElementById('greetings-container');
     greetingContainer.innerText = greeting;
+
 }
+
+}
+
